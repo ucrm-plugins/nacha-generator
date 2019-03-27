@@ -1,0 +1,25 @@
+{
+    "version": "1",
+    "information": {
+        "name": "nacha-generator",
+        "displayName": "NACHA Generator",
+        "description": "A simple Plugin for UCRM to generate NACHA files.",
+        "url": "https://github.com/ucrm-plugins/nacha-generator",
+        "version": "1.1.0",
+        "ucrmVersionCompliancy": {
+            "min": "2.15.0",
+            "max": null
+        },
+        "author": "Ryan Spaeth"
+    },
+    "menu": [
+        {
+            "key": "Add-Ons",
+            "label": "NACHA Generator",
+            "type": "admin",
+            "target": "iframe"
+        }
+    ],
+    "configuration": []
+}
+

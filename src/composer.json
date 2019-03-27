@@ -1,0 +1,73 @@
+{
+    "name": "ucrm-plugins/nacha-generator",
+    "description": "A simple Plugin for UCRM to generate NACHA files.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ryan Spaeth",
+            "email": "rspaeth@mvqn.net"
+        }
+    ],
+    "require": {
+        "php": "~7.2",
+        "ext-json": "*",
+        "ext-zip": "*",
+        "ext-ssh2": "*",
+
+        "mvqn/localization": "1.*",
+        "mvqn/twig": "1.*",
+
+        "mvqn/ucrm-plugin-sdk": "^1.1.7",
+
+        "slim/slim": "^3.1",
+        "slim/twig-view": "^2.0",
+        "monolog/monolog": "^1.24",
+
+        "nacha/file-generator": "~1.9"
+
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~8",
+        "vlucas/phpdotenv": "2.5.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/App/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+        }
+    },
+    "scripts": {
+        "sync": [
+            "@php bin/composer.php sync"
+        ],
+        "create": [
+            "@php bin/composer.php sync",
+            "@php bin/composer.php create"
+        ],
+        "bundle": [
+            "@composer client:build",
+            "@composer server:build",
+            "@php bin/composer.php bundle"
+        ],
+
+        "client:run": [
+            "npm --prefix public/app run dev"
+        ],
+        "client:build": [
+            "npm --prefix public/app update",
+            "npm --prefix public/app run build"
+        ],
+
+        "server:run": [
+            "@php -S localhost:80"
+        ],
+        "server:build": [
+            "@composer --no-interaction --verbose update"
+        ]
+
+
+    }
+}
