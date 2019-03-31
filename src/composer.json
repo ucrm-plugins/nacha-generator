@@ -49,22 +49,11 @@
         ],
         "bundle": [
             "@composer client:build",
-            "@composer server:build",
+            "@composer server:update",
             "@php bin/composer.php bundle"
         ],
 
-        "client:run": [
-            "npm --prefix public/app run dev"
-        ],
-        "client:build": [
-            "npm --prefix public/app update",
-            "npm --prefix public/app run build"
-        ],
-
-        "server:run": [
-            "@php -S localhost:80"
-        ],
-        "server:build": [
+        "server:update": [
             "@composer --no-interaction --verbose update"
         ]
 
