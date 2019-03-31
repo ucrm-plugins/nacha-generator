@@ -1,5 +1,6 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="server:update" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="C:/Composer/Composer.bat" scriptParameters="--no-interaction --verbose update">
+  <configuration default="false" name="server:update" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="C:/Composer/composer.phar" scriptParameters="--no-interaction --verbose update">
+    <CommandLine workingDirectory="$PROJECT_DIR$/src/" />
     <method v="2" />
   </configuration>
 </component>

@@ -46,17 +46,6 @@
         "create": [
             "@php bin/composer.php sync",
             "@php bin/composer.php create"
-        ],
-        "bundle": [
-            "@composer client:build",
-            "@composer server:update",
-            "@php bin/composer.php bundle"
-        ],
-
-        "server:update": [
-            "@composer --no-interaction --verbose update"
         ]
-
-
     }
 }

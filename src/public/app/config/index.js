@@ -24,7 +24,16 @@ module.exports = {
             "/dist": {
                 target: "https://ucrm.dev.mvqn.net/",
                 changeOrigin: true
+            },
+            "/public": {
+                target: "http://localhost:8080/",
+                changeOrigin: false,
+                pathRewrite: {
+                    "^/public": ""
+                }
             }
+
+
         },
 
         // -------------------------------------------------------------------------------------------------------------
