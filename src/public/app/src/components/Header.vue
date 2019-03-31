@@ -39,7 +39,18 @@
             <ul class="nav nav-tabs d-flex flex-column flex-sm-row text-center text-sm-left mt-0 mt-sm-3">
                 <li class="nav-item mr-0 mr-sm-5" v-for="item in nav.right">
                     <router-link class="nav-link d-flex flex-row justify-content-between" :to="item.link">
-                        {{ item.name }}
+                        <span v-if="item.name">{{ item.name }}</span>
+
+                        <span v-if="item.icon">
+                            <i :class=
+                                "[
+                                    { 'fas': item.icon }, item.icon,
+                                    { 'ml-2': item.name },
+                                    {'mx-sm-3': !item.name}, { 'mx-0': !item.name }
+                                ]">
+                            </i>
+                        </span>
+
                         <div v-if="item.badge">
                             <span class="nav-badge rounded"><small>3</small></span>
                         </div>
@@ -53,6 +64,8 @@
 </template>
 
 <script>
+
+
 export default {
     name: "Header",
     data() {
@@ -76,6 +89,7 @@ export default {
                 right: [
                     {
                         name: "Settings",
+                        //icon: "fa-cog",
                         link: "/settings",
                         badge: ""
                     }

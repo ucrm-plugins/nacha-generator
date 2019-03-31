@@ -26,39 +26,24 @@
 
 <script>
 
-export default {
 
-    name: "Create",
+    export default {
 
-    data () {
-        return {
-            msg: 'This is a test!'
+        name: "Generate",
+
+        data () {
+            return {
+                msg: 'This is a test!'
+            }
         }
-    }
 
-}
+    }
 
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-h1, h2 {
-    font-weight: normal;
-}
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    display: inline-block;
-    margin: 0 10px;
-}
-
-a {
-    color: #42b983;
-}
 
 </style>

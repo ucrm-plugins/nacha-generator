@@ -9,7 +9,7 @@
 <script>
 
     export default {
-        name: "Content",
+        name: "Page",
         data() {
             return {
                 pluginName: "NACHA Generator",

@@ -1,22 +1,24 @@
 <template>
     <div id="app" class="d-flex flex-column">
         <Header />
-        <Content>
+        <Page>
             <router-view/>
-        </Content>
+        </Page>
     </div>
 </template>
 
 <script>
 
 import Header from "./components/Header";
-import Content from "./components/Content";
+import Page from "./components/Page";
+
+
 
 export default {
     name: "App",
     components: {
         Header,
-        Content
+        Page
     }
 }
 
