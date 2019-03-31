@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="On explicit save action" serverName="ucrm.dev.mvqn.net" autoUploadExternalChanges="true">
+    <serverData>
+      <paths name="ucrm.dev.mvqn.net">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/ucrm/data/ucrm/ucrm/data/plugins/nacha-generator/" local="$PROJECT_DIR$/src/" web="/" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/src/data" />
+            <excludedPath local="true" path="$PROJECT_DIR$/src/vendor" />
+            <excludedPath local="true" path="$PROJECT_DIR$/src/ucrm.json" />
+            <excludedPath local="true" path="$PROJECT_DIR$/src/public/app" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ON_EXPLICIT_SAVE" />
+  </component>
+</project>

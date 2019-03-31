@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="plugin:bundle" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="C:/Composer/Composer.bat" scriptParameters="bin/composer.php bundle">
+    <method v="2">
+      <option name="RunConfigurationTask" enabled="true" run_configuration_name="client:build" run_configuration_type="js.build_tools.npm" />
+      <option name="RunConfigurationTask" enabled="true" run_configuration_name="server:update" run_configuration_type="PhpLocalRunConfigurationType" />
+    </method>
+  </configuration>
+</component>
