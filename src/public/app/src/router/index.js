@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Create from "../components/views/Create";
+import Generate from "../components/views/Generate";
 
 Vue.use(Router);
 
@@ -8,8 +8,13 @@ export default new Router({
     routes: [
         {
             path: "/",
-            name: "Create",
-            component: Create
+            name: "Home",
+            redirect: "generate"
+        },
+        {
+            path: "/generate",
+            name: "Generate",
+            component: Generate
         }
     ]
 });

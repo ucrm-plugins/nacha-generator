@@ -22,9 +22,22 @@
                 </a>
             </div>
         </div>
-        <div id="toolbar" class="" v-if="hasToolbar()">
-            <ul class="nav nav-tabs d-flex flex-column flex-sm-row text-center text-sm-left">
-                <li class="nav-item mr-0 mr-sm-5" v-for="item in nav.items">
+
+        <div id="toolbar" class="" v-if="hasToolbar()" class="d-flex flex-column flex-sm-row justify-content-between">
+            <ul class="nav nav-tabs d-flex flex-column flex-sm-row text-center text-sm-left mt-3">
+                <li class="nav-item mr-0 mr-sm-5" v-for="item in nav.left">
+                    <router-link class="nav-link d-flex flex-row justify-content-between" :to="item.link">
+                        {{ item.name }}
+                        <div v-if="item.badge">
+                            <span class="nav-badge rounded"><small>3</small></span>
+                        </div>
+
+                    </router-link>
+                    <div class="nav-underline"></div>
+                </li>
+            </ul>
+            <ul class="nav nav-tabs d-flex flex-column flex-sm-row text-center text-sm-left mt-0 mt-sm-3">
+                <li class="nav-item mr-0 mr-sm-5" v-for="item in nav.right">
                     <router-link class="nav-link d-flex flex-row justify-content-between" :to="item.link">
                         {{ item.name }}
                         <div v-if="item.badge">
@@ -48,15 +61,23 @@ export default {
             githubRepo: "https://github.com/ucrm-plugins/nacha-generator",
             donateLink: "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YGDTYH2P6WJNN&source=url",
             nav: {
-                items: [
+                left: [
                     {
-                        name: "Active clients",
-                        link: "/",
-                        badge: "30"
+                        name: "Generate",
+                        link: "/generate",
+                        badge: ""
                     },
                     {
-                        name: "Client leads",
-                        link: "/history"
+                        name: "History",
+                        link: "/history",
+                        badge: "2"
+                    }
+                ],
+                right: [
+                    {
+                        name: "Settings",
+                        link: "/settings",
+                        badge: ""
                     }
                 ]
             }
@@ -67,7 +88,11 @@ export default {
     },
     methods: {
         hasToolbar() {
-            return (this.nav && this.nav.items && this.nav.items.length > 0 );
+            return (
+                this.nav &&
+                (this.nav.left && this.nav.left.length > 0) ||
+                (this.nav.right && this.nav.right.length > 0)
+            );
         }
 
     }
@@ -102,6 +127,9 @@ export default {
         height:16px;
     }
 
+    #toolbar {
+        margin-top: 2px;
+    }
 
     #toolbar > ul.nav-tabs {
         border: none;
